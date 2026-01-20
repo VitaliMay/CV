@@ -45,6 +45,20 @@
   //   /* На мобильных меняем на одну колонку */
   // }
 
+  position: relative;
+
+  &__button {
+    position: absolute;
+
+    top: 10px;
+    right: 20px;
+
+    color: $sidebar-top;
+    font-weight: 600;
+
+    // cursor: pointer;
+    cursor: url(../assets/img/pointinghand.svg), pointer;
+  }
 
   &_left {
     // background-color: red;
@@ -288,6 +302,8 @@
   height: 1px;
   background: $add-color-dark;
   margin: 10px 0;
+
+  width: 100%;
 }
 
 .contact-item {
@@ -322,6 +338,9 @@
 .skill-dots {
   display: flex;
   gap: 5px;
+
+  font-weight: 600;
+  color: $sidebar-top;
 }
 
 .dot {
@@ -339,31 +358,60 @@
 
 /* Правая колонка */
 .main-content {
-  padding: 30px 20px;
+  padding: 30px 20px 0px 20px;
 }
 
 .main-section {
-  margin-bottom: 30px;
+  // margin-bottom: 30px;
+  padding-bottom: 20px;
 }
 
-.education-item, .project-item {
-  margin-bottom: 20px;
+// .education-item {
+//   margin-bottom: 20px;
+// }
+
+.project-container {
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+  // padding-bottom: 15px;
+}
+
+.project-item {
+  display: flex;
+  flex-direction: column;
+  row-gap: 4px;
+  // margin-bottom: 20px;
 }
 
 .title {
   font-size: 10px;
   font-weight: bold;
   color: #333333;
-  margin-bottom: 5px;
+  // margin-bottom: 5px;
   display: block;
+
+  &_education {
+    margin-bottom: 5px;
+  }
 }
 
 .subtitle {
   font-size: 10px;
   color: $sidebar-top;
-  margin-bottom: 5px;
+  // margin-bottom: 5px;
+  display: block;
+
+  &_about {
+     font-weight: bold;
+     line-height: 1.5;
+  }
+  
+  &_education {
+    padding-left: 10px;
+  }
 }
-        
+
 .text {
   font-size: 10px;
   color: black;
@@ -374,21 +422,32 @@
     padding-left: 10px;
     padding-bottom: 5px;
   }
+
+  &__about {
+    padding-left: 10px;
+  }
 }
 
 .link {
   color: black;
   text-decoration: none;
   // border-bottom: 0.5px solid black;
-  padding-bottom: 1px;
+
+  // padding-bottom: 1px;
+  display: block;
 }
-        
+
+.link-space {
+  height: 4px;
+}
+
 .task-item {
   position: relative;
   padding-left: 20px;
-  margin: 3px 0;
+  // margin: 3px 0;
+
   // margin: 10px 0;
-  display: block;
+  // display: block;
 }
         
 .task-item::before {
@@ -401,3 +460,9 @@
   background: black;
   border-radius: 50%;
 }
+
+/*************************/
+
+// .list__item {
+//   font-weight: 400;
+// }
