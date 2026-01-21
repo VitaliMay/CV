@@ -40,10 +40,10 @@
 
   min-height: 100vh;
 
-  // @media (max-width: 1000px) {
-  //   grid-template-columns: 1fr;
-  //   /* На мобильных меняем на одну колонку */
-  // }
+  @media (max-width: 640px) {
+    grid-template-columns: 1fr;
+    /* На мобильных меняем на одну колонку */
+  }
 
   position: relative;
 
@@ -56,8 +56,15 @@
     color: $sidebar-top;
     font-weight: 600;
 
+    // padding: 25px;
+    // background: #aae9e9;
+
     // cursor: pointer;
     cursor: url(../assets/img/pointinghand.svg), pointer;
+  
+    @media (max-width: 768px) {
+      color: $sidebar-fon;
+    }
   }
 
   &_left {
@@ -74,7 +81,8 @@
 
   &_right {
     // background-color: goldenrod;
-    background: rgb(255, 255, 255);
+    // background: rgb(255, 255, 255);
+    background: $static-white;
   }
 }
 
@@ -288,7 +296,8 @@
 /* ***************************************** */
 
 .section {
-  padding: 15px;
+  // padding: 15px;
+  padding: 15px 15px 0px 15px;
 }
 
 .section-title {
@@ -304,6 +313,19 @@
   margin: 10px 0;
 
   width: 100%;
+
+  &_end {
+    display: none;
+    background: inherit;
+    height: 6px;
+    margin: 0;
+    border-top: solid $add-color-dark 1px;
+    border-bottom: solid $add-color-dark 1px;
+
+    @media (max-width: 640px) {
+    display: block;
+  }
+  }
 }
 
 .contact-item {
@@ -358,13 +380,17 @@
 
 /* Правая колонка */
 .main-content {
-  padding: 30px 20px 0px 20px;
-}
-
-.main-section {
-  // margin-bottom: 30px;
+  padding: 30px 20px 20px 20px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
   padding-bottom: 20px;
 }
+
+// .main-section {
+//   // margin-bottom: 30px;
+//   padding-bottom: 20px;
+// }
 
 // .education-item {
 //   margin-bottom: 20px;
@@ -462,6 +488,12 @@
 }
 
 /*************************/
+.list {
+  line-height: 1.2;
+  display: flex;
+  flex-direction: column;
+  row-gap: 2px;
+}
 
 // .list__item {
 //   font-weight: 400;

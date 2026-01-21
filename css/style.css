@@ -1826,6 +1826,12 @@ body.lock {
   min-height: 100vh;
   position: relative;
 }
+@media (max-width: 640px) {
+  .sidebar-container {
+    grid-template-columns: 1fr;
+    /* На мобильных меняем на одну колонку */
+  }
+}
 .sidebar-container__button {
   position: absolute;
   top: 10px;
@@ -1833,6 +1839,11 @@ body.lock {
   color: rgb(57, 90, 134);
   font-weight: 600;
   cursor: url(../assets/img/pointinghand.svg), pointer;
+}
+@media (max-width: 768px) {
+  .sidebar-container__button {
+    color: rgb(245, 247, 249);
+  }
 }
 .sidebar-container_left {
   background: rgb(245, 247, 249);
@@ -1981,7 +1992,7 @@ body.lock {
 
 /* ***************************************** */
 .section {
-  padding: 15px;
+  padding: 15px 15px 0px 15px;
 }
 
 .section-title {
@@ -1996,6 +2007,19 @@ body.lock {
   background: rgb(200, 200, 200);
   margin: 10px 0;
   width: 100%;
+}
+.divider_end {
+  display: none;
+  background: inherit;
+  height: 6px;
+  margin: 0;
+  border-top: solid rgb(200, 200, 200) 1px;
+  border-bottom: solid rgb(200, 200, 200) 1px;
+}
+@media (max-width: 640px) {
+  .divider_end {
+    display: block;
+  }
 }
 
 .contact-item {
@@ -2045,10 +2069,10 @@ body.lock {
 /**************************************************/
 /* Правая колонка */
 .main-content {
-  padding: 30px 20px 0px 20px;
-}
-
-.main-section {
+  padding: 30px 20px 20px 20px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
   padding-bottom: 20px;
 }
 
@@ -2127,4 +2151,10 @@ body.lock {
   border-radius: 50%;
 }
 
-/*************************//*# sourceMappingURL=style.css.map */
+/*************************/
+.list {
+  line-height: 1.2;
+  display: flex;
+  flex-direction: column;
+  row-gap: 2px;
+}/*# sourceMappingURL=style.css.map */
