@@ -1,44 +1,58 @@
 import { buttonLang, langVarElements } from "./variables.js";
 import { contentData } from "./content.js";
-// import { Router } from "./router.js";
 
 const langState = {
   isEnglish: true,
   langCurrent: 'Eng',
   langNext: 'Rus',
+
+  get langCurrentMod() {
+    return this.langCurrent.toLowerCase();
+  },
+
+  get langNextMod() {
+    return this.langNext.toLowerCase();
+  }
 }
 
+const langValid = () => {
+  const {langCurrentMod, langNextMod} = langState;
+  const langTagetMod = langState.isEnglish ? langNextMod : langCurrentMod;
+  return langTagetMod
+}
 
-const updateContent = () => {
-  const {langCurrent, langNext} = langState;
-  const langTagetMod = langState.isEnglish ? langNext.toLowerCase() : langCurrent.toLowerCase();
-
-  // Router.navigate(`/${langTagetMod}`)
+const updateContent = (lang) => {
 
   for (const [key, element] of Object.entries(langVarElements)) {
     if (contentData[key] && element) {
-      element.textContent = contentData[key][langTagetMod];
+      element.textContent = contentData[key][lang];
     }
   }
 };
 
-const changeLang = () => {
-  const {langCurrent, langNext} = langState;
-  langState.isEnglish = !langState.isEnglish;
+const langButton = () => {
+  const { langCurrent, langNext } = langState;
   const langTaget = langState.isEnglish ? langCurrent : langNext;
-  buttonLang.textContent = langTaget;
+  return langTaget
+}
 
-  updateContent();
+const updateButton = (langTaget) => {
+  buttonLang.textContent = langTaget;
+}
+
+// лучше ввести язык контента и кнопки как аргумент (для большей ясности)
+const changeLang = () => {
+  langState.isEnglish = !langState.isEnglish;
+
+  const langMod = langValid()
+  const langTaget = langButton()
+  updateButton(langTaget)
+  updateContent(langMod);
 
   // console.log('Язык изменён на:', langState.isEnglish ? langNext : langCurrent);
 };
 
 /******************************** */
 
-// const initChangeLang = () => {
-//   buttonLang.addEventListener('click', changeLang)
-// }
-
 export { langState, changeLang }
-// export { initChangeLang, langState, changeLang }
 

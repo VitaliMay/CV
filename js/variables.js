@@ -48,7 +48,7 @@ const langVarElements = {
   eduUniver: sidebarContainer.querySelector('.title_education-univer'),
   eduUniverPro: sidebarContainer.querySelector('.subtitle_education-univer'),
   eduRSSPro: sidebarContainer.querySelector('.subtitle_education-rss'),
-  
+
 };
 
 // export {body, buttonLang, localizedElements}
