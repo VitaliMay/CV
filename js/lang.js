@@ -1,5 +1,6 @@
 import { buttonLang, langVarElements } from "./variables.js";
-import { contentData } from "./content.js";
+// import { contentData } from "./content.js";
+import { instanceDataService } from "./data-service.js";
 
 const langState = {
   isEnglish: true,
@@ -21,14 +22,34 @@ const langValid = () => {
   return langTagetMod
 }
 
-const updateContent = (lang) => {
+// const updateContent = (lang) => {
 
-  for (const [key, element] of Object.entries(langVarElements)) {
-    if (contentData[key] && element) {
-      element.textContent = contentData[key][lang];
+//   for (const [key, element] of Object.entries(langVarElements)) {
+//     if (contentData[key] && element) {
+//       element.textContent = contentData[key][lang];
+//     }
+//   }
+// };
+
+/************************************************** */
+const updateContent = async (lang) => {
+
+  try {
+    const contentDataArr = await instanceDataService.initData()
+    const contentData = Array.isArray(contentDataArr) ? contentDataArr[0] : contentDataArr;
+
+    for (const [key, element] of Object.entries(langVarElements)) {
+      if (contentData[key] && element) {
+        element.textContent = contentData[key][lang];
+      }
     }
+  } catch (error) {
+    console.error('Error fetching data:', error);
   }
 };
+
+
+/************************************************* */
 
 const langButton = () => {
   const { langCurrent, langNext } = langState;
