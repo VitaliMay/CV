@@ -1840,7 +1840,7 @@ body.lock {
   font-weight: 600;
   cursor: url(../assets/img/pointinghand.svg), pointer;
 }
-@media (max-width: 768px) {
+@media (max-width: 640px) {
   .sidebar-container__button {
     color: rgb(245, 247, 249);
   }

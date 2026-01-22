@@ -40,7 +40,8 @@
 
   min-height: 100vh;
 
-  @media (max-width: 640px) {
+  @media (max-width: $mobile-break-point) {
+  // @media (max-width: 640px) {
     grid-template-columns: 1fr;
     /* На мобильных меняем на одну колонку */
   }
@@ -62,7 +63,8 @@
     // cursor: pointer;
     cursor: url(../assets/img/pointinghand.svg), pointer;
   
-    @media (max-width: 768px) {
+    @media (max-width: $mobile-break-point) {
+    // @media (max-width: 640px) {
       color: $sidebar-fon;
     }
   }
@@ -322,9 +324,10 @@
     border-top: solid $add-color-dark 1px;
     border-bottom: solid $add-color-dark 1px;
 
-    @media (max-width: 640px) {
-    display: block;
-  }
+    @media (max-width: $mobile-break-point) {
+    // @media (max-width: 640px) {
+      display: block;
+    }
   }
 }
 
