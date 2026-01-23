@@ -5,6 +5,8 @@ import { initChangeLang } from "./js/routes-path.js";
 import { createRouter } from "./js/routes-path.js";
 import { Router } from "./js/router.js";
 
+import { initLangLS } from "./js/ls-storage.js";
+
 // отменяю контекстное меню при длинном таче
 // body.addEventListener('contextmenu', function (event) {
 //   event.preventDefault();
@@ -14,6 +16,8 @@ import { Router } from "./js/router.js";
 createRouter();
 
 initChangeLang()
+
+initLangLS()
 
 window.addEventListener('load', () => {
   // Если все еще нет хэша (на всякий случай)
