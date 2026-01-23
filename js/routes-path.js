@@ -4,13 +4,13 @@ import { buttonLang } from "./variables.js"
 
 
 const routeEng = () => {
-  // langState.isEnglish = true
-  changeLang()
+  const { langNext: langButton,  langCurrentMod: langContent } = langState;
+  changeLang(langButton, langContent);
 }
 
 const routeRus = () => {
-  // langState.isEnglish = false
-  changeLang()
+  const { langCurrent: langButton,  langNextMod: langContent } = langState;
+  changeLang(langButton, langContent);
 }
 
 export const routesPath = {
@@ -20,9 +20,6 @@ export const routesPath = {
 
 export const initChangeLang = () => {
   buttonLang.addEventListener('click', () => {
-    // changeLang();
-    // const { langCurrent, langNext } = langState
-    // const newLang = langState.isEnglish ? langCurrent.toLowerCase() : langNext.toLowerCase();
     const { langCurrentMod, langNextMod } = langState
     const newLang = langState.isEnglish ? langCurrentMod : langNextMod;
     Router.navigate(`/${newLang}`);

@@ -1,5 +1,5 @@
 import { buttonLang, langVarElements } from "./variables.js";
-import { contentData } from "./content.js";
+import { instanceDataService } from "./data-service.js";
 
 const langState = {
   isEnglish: true,
@@ -15,39 +15,34 @@ const langState = {
   }
 }
 
-const langValid = () => {
-  const {langCurrentMod, langNextMod} = langState;
-  const langTagetMod = langState.isEnglish ? langNextMod : langCurrentMod;
-  return langTagetMod
-}
+/************************************************** */
+const updateContent = async (lang) => {
 
-const updateContent = (lang) => {
+  try {
+    const contentDataArr = await instanceDataService.initData()
+    const contentData = Array.isArray(contentDataArr) ? contentDataArr[0] : contentDataArr;
 
-  for (const [key, element] of Object.entries(langVarElements)) {
-    if (contentData[key] && element) {
-      element.textContent = contentData[key][lang];
+    for (const [key, element] of Object.entries(langVarElements)) {
+      if (contentData[key] && element) {
+        element.textContent = contentData[key][lang];
+      }
     }
+  } catch (error) {
+    console.error('Error fetching data:', error);
   }
 };
 
-const langButton = () => {
-  const { langCurrent, langNext } = langState;
-  const langTaget = langState.isEnglish ? langCurrent : langNext;
-  return langTaget
+/************************************************* */
+
+const updateButton = (langButton) => {
+  buttonLang.textContent = langButton;
 }
 
-const updateButton = (langTaget) => {
-  buttonLang.textContent = langTaget;
-}
-
-// лучше ввести язык контента и кнопки как аргумент (для большей ясности)
-const changeLang = () => {
+const changeLang = (langButton, langContent) => {
   langState.isEnglish = !langState.isEnglish;
 
-  const langMod = langValid()
-  const langTaget = langButton()
-  updateButton(langTaget)
-  updateContent(langMod);
+  updateButton(langButton)
+  updateContent(langContent);
 
   // console.log('Язык изменён на:', langState.isEnglish ? langNext : langCurrent);
 };
