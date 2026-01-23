@@ -1,5 +1,4 @@
 import { buttonLang, langVarElements } from "./variables.js";
-// import { contentData } from "./content.js";
 import { instanceDataService } from "./data-service.js";
 
 const langState = {
@@ -15,21 +14,6 @@ const langState = {
     return this.langNext.toLowerCase();
   }
 }
-
-const langValid = () => {
-  const {langCurrentMod, langNextMod} = langState;
-  const langTagetMod = langState.isEnglish ? langNextMod : langCurrentMod;
-  return langTagetMod
-}
-
-// const updateContent = (lang) => {
-
-//   for (const [key, element] of Object.entries(langVarElements)) {
-//     if (contentData[key] && element) {
-//       element.textContent = contentData[key][lang];
-//     }
-//   }
-// };
 
 /************************************************** */
 const updateContent = async (lang) => {
@@ -48,27 +32,17 @@ const updateContent = async (lang) => {
   }
 };
 
-
 /************************************************* */
 
-const langButton = () => {
-  const { langCurrent, langNext } = langState;
-  const langTaget = langState.isEnglish ? langCurrent : langNext;
-  return langTaget
+const updateButton = (langButton) => {
+  buttonLang.textContent = langButton;
 }
 
-const updateButton = (langTaget) => {
-  buttonLang.textContent = langTaget;
-}
-
-// лучше ввести язык контента и кнопки как аргумент (для большей ясности)
-const changeLang = () => {
+const changeLang = (langButton, langContent) => {
   langState.isEnglish = !langState.isEnglish;
 
-  const langMod = langValid()
-  const langTaget = langButton()
-  updateButton(langTaget)
-  updateContent(langMod);
+  updateButton(langButton)
+  updateContent(langContent);
 
   // console.log('Язык изменён на:', langState.isEnglish ? langNext : langCurrent);
 };

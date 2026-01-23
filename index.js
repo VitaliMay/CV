@@ -1,7 +1,5 @@
 // import { body } from "./js/variables.js";
 import { signatureScore } from "./js/score.js";
-
-// import { initChangeLang } from "./js/lang.js";
 import { initChangeLang } from "./js/routes-path.js";
 
 import { createRouter } from "./js/routes-path.js";
@@ -12,10 +10,8 @@ import { Router } from "./js/router.js";
 //   event.preventDefault();
 // });
 
-
 /************************************************** */
 createRouter();
-// const router = createRouter();
 
 initChangeLang()
 
