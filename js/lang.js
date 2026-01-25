@@ -12,6 +12,15 @@ const langState = {
 
   get langNextMod() {
     return this.langNext.toLowerCase();
+  },
+
+  get langDisplay() {
+    return this.isEnglish? this.langCurrentMod : this.langNextMod;
+  },
+
+  // Метод для переключения
+  toggle() {
+    this.isEnglish = !this.isEnglish;
   }
 }
 
@@ -39,7 +48,8 @@ const updateButton = (langButton) => {
 }
 
 const changeLang = (langButton, langContent) => {
-  langState.isEnglish = !langState.isEnglish;
+  // langState.isEnglish = !langState.isEnglish;
+  langState.toggle()
 
   updateButton(langButton)
   updateContent(langContent);
