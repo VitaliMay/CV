@@ -1,8 +1,10 @@
 import { buttonLang, langVarElements } from "./variables.js";
 import { instanceDataService } from "./data-service.js";
+import { storeLS } from "./ls-storage.js";
 
 const langState = {
-  isEnglish: true,
+  isEnglish: storeLS.getLang() === '/eng',
+  // isEnglish: true,
   langCurrent: 'Eng',
   langNext: 'Rus',
 
@@ -23,6 +25,9 @@ const langState = {
     this.isEnglish = !this.isEnglish;
   }
 }
+
+// console.log(langState.isEnglish)
+// console.log(storeLS.getLang())
 
 /************************************************** */
 const updateContent = async (lang) => {

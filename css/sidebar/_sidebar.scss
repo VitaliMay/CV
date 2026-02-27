@@ -64,6 +64,22 @@
       color: $sidebar-fon;
     }
   }
+  &__svg {
+    position: absolute;
+
+    top: 8px;
+    right: 50px;
+
+    color: $sidebar-top;
+    font-weight: 600;
+
+    cursor: url(../assets/img/pointinghand.svg), pointer;
+  
+    @media (max-width: $mobile-break-point) {
+    // @media (max-width: 640px) {
+      color: $sidebar-fon;
+    }
+  }
 
   &_left {
     // background-color: red;
@@ -82,6 +98,11 @@
     // background: rgb(255, 255, 255);
     background: $static-white;
   }
+}
+
+.download-svg {
+  width: 15px;
+  height: 15px;
 }
 
 /******************************************** */
@@ -336,14 +357,31 @@
 
   line-height: 125%;
   letter-spacing: 0.04em;
+
+  
+
+  // &:hover .contact-icon  {
+  //   fill: $tag-green;
+  //   transition: fill $tr-time ease-in-out;
+  // }
+}
+
+a.contact-item:hover .contact-icon  {
+  fill: $tag-green;
+  transition: fill $tr-time ease-in-out;
 }
 
 .contact-icon {
   width: 15px;
   height: 15px;
   fill: $sidebar-top;
+  transition: fill $tr-time ease-in-out;
   // fill: #395a86;
   flex-shrink: 0;
+
+  // &:hover {
+    
+  // }
 }
 
 /************************************/
