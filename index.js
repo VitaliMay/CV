@@ -7,6 +7,8 @@ import { Router } from "./js/router.js";
 
 import { initLangLS } from "./js/ls-storage.js";
 
+import { initDownload } from "./js/downloadPDF.js";
+
 // отменяю контекстное меню при длинном таче
 // body.addEventListener('contextmenu', function (event) {
 //   event.preventDefault();
@@ -18,6 +20,8 @@ createRouter();
 initChangeLang()
 
 initLangLS()
+
+initDownload()
 
 window.addEventListener('load', () => {
   // Если все еще нет хэша (на всякий случай)

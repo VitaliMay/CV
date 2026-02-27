@@ -1,8 +1,10 @@
 import { buttonLang, langVarElements } from "./variables.js";
 import { instanceDataService } from "./data-service.js";
+import { storeLS } from "./ls-storage.js";
 
 const langState = {
-  isEnglish: true,
+  isEnglish: storeLS.getLang() === '/eng',
+  // isEnglish: true,
   langCurrent: 'Eng',
   langNext: 'Rus',
 
@@ -12,8 +14,20 @@ const langState = {
 
   get langNextMod() {
     return this.langNext.toLowerCase();
+  },
+
+  get langDisplay() {
+    return this.isEnglish? this.langCurrentMod : this.langNextMod;
+  },
+
+  // Метод для переключения
+  toggle() {
+    this.isEnglish = !this.isEnglish;
   }
 }
+
+// console.log(langState.isEnglish)
+// console.log(storeLS.getLang())
 
 /************************************************** */
 const updateContent = async (lang) => {
@@ -39,7 +53,8 @@ const updateButton = (langButton) => {
 }
 
 const changeLang = (langButton, langContent) => {
-  langState.isEnglish = !langState.isEnglish;
+  // langState.isEnglish = !langState.isEnglish;
+  langState.toggle()
 
   updateButton(langButton)
   updateContent(langContent);

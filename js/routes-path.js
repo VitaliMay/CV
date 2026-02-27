@@ -20,9 +20,12 @@ export const routesPath = {
 
 export const initChangeLang = () => {
   buttonLang.addEventListener('click', () => {
-    const { langCurrentMod, langNextMod } = langState
-    const newLang = langState.isEnglish ? langCurrentMod : langNextMod;
+    // const { langCurrentMod, langNextMod } = langState
+    // const newLang = langState.isEnglish ? langCurrentMod : langNextMod;
+    const newLang = langState.langDisplay
     Router.navigate(`/${newLang}`);
+    // console.log(`click на Ланг ${newLang}`)
+    // console.log(`click на isEnglish ${langState.isEnglish}`)
   })
 }
 
