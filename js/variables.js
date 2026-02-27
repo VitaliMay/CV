@@ -6,6 +6,7 @@ const body = document.body
 const sidebarContainer = document.querySelector('.sidebar-container')
 const buttonLang = sidebarContainer.querySelector('.sidebar-container__button')
 const buttonDownload = sidebarContainer.querySelector('.sidebar-container__svg')
+const spinner = document.querySelector('.spinner')
 
 /******************************* */
 
@@ -54,4 +55,4 @@ const langVarElements = {
 
 // export {body, buttonLang, localizedElements}
 // export {body, buttonLang, langNameVar}
-export {body, buttonLang, buttonDownload, langVarElements}
+export {body, buttonLang, buttonDownload, spinner, langVarElements}

@@ -1906,6 +1906,39 @@ body.lock {
   height: 15px;
 }
 
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+.spinner {
+  display: none;
+  position: absolute;
+  top: 5px;
+  right: 45px;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  animation: spin 2s linear infinite;
+}
+.spinner_active {
+  display: flex;
+}
+.spinner__svg {
+  transform: scaleY(-1);
+  height: 24px;
+  width: 24px;
+  color: rgb(57, 90, 134);
+}
+@media (max-width: 640px) {
+  .spinner__svg {
+    color: rgb(245, 247, 249);
+  }
+}
+
 /******************************************** */
 .header-blue {
   background: rgb(57, 90, 134);

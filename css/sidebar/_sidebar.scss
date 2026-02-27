@@ -105,6 +105,54 @@
   height: 15px;
 }
 
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.spinner {
+  display: none;
+
+  // position: fixed;
+  // top: 0;
+  // left: 0;
+  // right: 0;
+  // bottom: 0;
+  // background: rgba(0, 0, 0, 0.5);
+
+  position: absolute;
+  top: 5px;
+  right: 45px;
+
+  // display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+
+  animation: spin 2s linear infinite;
+
+  &_active {
+    display: flex;
+  }
+
+  &__svg {
+
+    transform: scaleY(-1);
+    height: 24px;
+    width: 24px;
+    color: $sidebar-top;
+
+    @media (max-width: $mobile-break-point) {
+    // @media (max-width: 640px) {
+      color: $sidebar-fon;
+    }
+  }
+}
+
 /******************************************** */
 
 .header-blue {
