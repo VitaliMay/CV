@@ -422,6 +422,7 @@ body {
   min-height: 100vh;
   width: 100%;
   margin: 0 auto;
+  background: rgba(57, 90, 134, 0.2);
 }
 
 /* чтобы прижать футер к низу страницы*/
@@ -1879,9 +1880,11 @@ body.lock {
     color: rgb(245, 247, 249);
   }
 }
-.sidebar-container__button:hover {
-  color: rgb(6, 164, 79);
-  transition: color 0.2s ease-in-out;
+@media (hover: hover) and (pointer: fine) {
+  .sidebar-container__button:hover {
+    color: rgb(6, 164, 79);
+    transition: color 0.2s ease-in-out;
+  }
 }
 .sidebar-container__svg {
   position: absolute;
@@ -1897,9 +1900,11 @@ body.lock {
     color: rgb(245, 247, 249);
   }
 }
-.sidebar-container__svg:hover {
-  color: rgb(6, 164, 79);
-  transition: color 0.2s ease-in-out;
+@media (hover: hover) and (pointer: fine) {
+  .sidebar-container__svg:hover {
+    color: rgb(6, 164, 79);
+    transition: color 0.2s ease-in-out;
+  }
 }
 .sidebar-container_left {
   background: rgb(245, 247, 249);
@@ -2126,11 +2131,12 @@ body.lock {
   letter-spacing: 0.04em;
 }
 
-a.contact-item:hover .contact-icon {
-  fill: rgb(6, 164, 79);
-  transition: fill 0.2s ease-in-out;
+@media (hover: hover) and (pointer: fine) {
+  a.contact-item:hover .contact-icon {
+    fill: rgb(6, 164, 79);
+    transition: fill 0.2s ease-in-out;
+  }
 }
-
 .contact-icon {
   width: 15px;
   height: 15px;

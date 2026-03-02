@@ -69,9 +69,11 @@
       color: $sidebar-fon;
     }
 
-    &:hover {
-      color: $tag-green;
-      transition: color $tr-time ease-in-out;
+    @media (hover: hover) and (pointer: fine) {
+      &:hover {
+        color: $tag-green;
+        transition: color $tr-time ease-in-out;
+      }
     }
   }
   &__svg {
@@ -92,9 +94,11 @@
       color: $sidebar-fon;
     }
 
-    &:hover {
-      color: $tag-green;
-      transition: color $tr-time ease-in-out;
+    @media (hover: hover) and (pointer: fine) {
+      &:hover {
+        color: $tag-green;
+        transition: color $tr-time ease-in-out;
+      }
     }
   }
 
@@ -431,9 +435,11 @@
   // }
 }
 
-a.contact-item:hover .contact-icon  {
-  fill: $tag-green;
-  transition: fill $tr-time ease-in-out;
+@media (hover: hover) and (pointer: fine) {
+  a.contact-item:hover .contact-icon  {
+    fill: $tag-green;
+    transition: fill $tr-time ease-in-out;
+  }
 }
 
 .contact-icon {
