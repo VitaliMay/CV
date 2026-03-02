@@ -420,7 +420,7 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  max-width: 1440px;
+  width: 100%;
   margin: 0 auto;
 }
 
@@ -1840,9 +1840,8 @@ body.lock {
 .sidebar {
   margin: 0 auto;
   width: 100%;
-  max-width: 1440px;
-  border-radius: 20px 20px 0px 0px;
-  box-shadow: 0 2px 0px rgb(245, 247, 249);
+  max-width: 1000px;
+  box-shadow: 2px 7px 16px 2px rgb(57, 90, 134);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -1873,11 +1872,16 @@ body.lock {
   color: rgb(57, 90, 134);
   font-weight: 600;
   cursor: url(../assets/img/pointinghand.svg), pointer;
+  transition: color 0.2s ease-in-out;
 }
 @media (max-width: 640px) {
   .sidebar-container__button {
     color: rgb(245, 247, 249);
   }
+}
+.sidebar-container__button:hover {
+  color: rgb(6, 164, 79);
+  transition: color 0.2s ease-in-out;
 }
 .sidebar-container__svg {
   position: absolute;
@@ -1886,11 +1890,16 @@ body.lock {
   color: rgb(57, 90, 134);
   font-weight: 600;
   cursor: url(../assets/img/pointinghand.svg), pointer;
+  transition: color 0.2s ease-in-out;
 }
 @media (max-width: 640px) {
   .sidebar-container__svg {
     color: rgb(245, 247, 249);
   }
+}
+.sidebar-container__svg:hover {
+  color: rgb(6, 164, 79);
+  transition: color 0.2s ease-in-out;
 }
 .sidebar-container_left {
   background: rgb(245, 247, 249);
