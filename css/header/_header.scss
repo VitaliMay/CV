@@ -5,11 +5,14 @@
 .header {
   margin: 0 auto;
   width: 100%;
-  max-width: 1440px;
+  max-width: 1000px;
+  // max-width: 1440px;
 
   padding: 12px 8px;
   // background-color: antiquewhite;
-  background: $static-white;
+  // background: $static-white;
+
+  background: $sidebar-fon;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -17,7 +20,7 @@
 
 .header-container {
   width: 100%;
-  max-width: 1276px;
+  // max-width: 1276px;
 
   // padding: 12px 8px;
 
@@ -38,7 +41,7 @@
 
   border-radius: 4px;
   padding: 8px 20px;
-  width: 141px;
+  // width: 141px;
   height: 40px;
 
   display: flex;
@@ -46,12 +49,13 @@
   align-items: center;
   column-gap: 8px;
 
-  @include custom-cursor;
+  // @include custom-cursor;
   // cursor: url(../../assets/img/pointinghand.svg), pointer;
   // cursor: pointer;
 
   // background: $content-background;
-  background: $static-white;
+  // background: $static-white;
+  background: $sidebar-fon;
 
   &__text {
     @include action-small;
@@ -79,6 +83,8 @@
   justify-content: space-between;
   align-items: center;
 
+  background: $sidebar-fon;
+
   column-gap: 8px;
 
   row-gap: 8px;  //////////
@@ -97,7 +103,7 @@
     border-radius: 4px;
     padding: 12px 20px;
 
-    background: $static-white;
+    // background: $static-white;
 
     transition: all 0.6s;
 
@@ -126,7 +132,8 @@
 ////////////////////////////////////////////////////////////////////
 
 .menu {
-  background: $static-white;
+  // background: $static-white;
+  background: $sidebar-fon;
 
   @media screen and (max-width: 768.9px) {
     padding-top: 60px; //////////// 50px нравится больше но по ПП так
@@ -285,5 +292,52 @@
 
 ///////////////////////////////////////////////////////////////////////////////////////
 
+/********************************************************************/
+// Кнопка скрола
+
+.scroll-btn {
+  position: fixed;
+  // z-index: -100;  // не действует transition
+  z-index: 0;
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0.8s, opacity 0.8s;
+  pointer-events: none;
+
+  color: $sidebar-top;
+  // color: $primary;
+
+  &__img--up {
+    transform: rotate(-90deg);
+  }
+
+  @media (hover: hover) {
+    &:hover {
+      @include custom-cursor;
+    }
+  }
+
+  right: 8px;
+  bottom: 8px;
+
+  display: flex;
+  width: 56px;
+  height: 56px;
+  justify-content: center;
+  align-items: center;
+
+  border-radius: 100px;
+  border: 1px solid $sidebar-top;
+  // border: 1px solid $primary;
+  background: $static-white-60;
+}
+
+.scroll-btn.scroll-btn--visible {
+  z-index: 10;  // на всякий случай
+  visibility: visible;
+  opacity: 1;
+  transition: visibility 0.8s, opacity 0.8s;
+  pointer-events: all;
+}
 
 

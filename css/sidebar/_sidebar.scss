@@ -195,14 +195,17 @@
   gap: 4px;
 
   font-family: Arial;
-  font-size: 15px;
-  font-weight: 600;
+  font-size: 15px; // от него считает line-height в дочерних элементах
+  // font-weight: 600;
   // line-height: 152%;
   // letter-spacing: 0.16em;
   line-height: 125%;
 
   &__title {
     letter-spacing: 0.04em;
+
+    font-size: 15px; // чтобы перебить h1
+    font-weight: 600;
   }
 
   &__text {
@@ -395,6 +398,9 @@
   margin-bottom: 10px;
 }
 
+
+/*****************************************/
+
 .divider {
   height: 1px;
   background: $add-color-dark;
@@ -427,7 +433,7 @@
   line-height: 125%;
   letter-spacing: 0.04em;
 
-  
+  font-style: normal; // чтобы сбросить address
 
   // &:hover .contact-icon  {
   //   fill: $tag-green;
@@ -540,7 +546,7 @@
      font-weight: bold;
      line-height: 1.5;
   }
-  
+
   &_education {
     padding-left: 10px;
   }
@@ -583,7 +589,7 @@
   // margin: 10px 0;
   // display: block;
 }
-        
+
 .task-item::before {
   content: '';
   position: absolute;

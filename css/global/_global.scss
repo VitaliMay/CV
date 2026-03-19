@@ -27,8 +27,16 @@ dd {
   margin: 0;
 }
 
+ul {
+  padding: 0;
+}
+
 ul[class] {
   list-style: none;
+}
+
+li {
+    list-style-type: none;
 }
 
 input,
@@ -90,6 +98,17 @@ button {
   font-weight: 400;
   font-display: swap;
 }
+
+@font-face {
+  font-family: 'Allura';
+  src: url("../assets/fonts/allura/Allura-Regular.woff2") format('woff2'),
+       url("../assets/fonts/allura/Allura-Regular.woff") format('woff'),
+       url("../assets/fonts/allura/Allura-Regular.ttf") format('truetype');
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
 // @ff
 
 /***************************************************************/
