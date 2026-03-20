@@ -52,6 +52,7 @@
   position: relative;
 
   &__button {
+    border: none;
     position: absolute;
 
     top: 10px;
@@ -61,7 +62,7 @@
     font-weight: 600;
 
     cursor: url(../assets/img/pointinghand.svg), pointer;
-  
+
     transition: color $tr-time ease-in-out;
 
     @media (max-width: $mobile-break-point) {

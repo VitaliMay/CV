@@ -4,15 +4,18 @@ const body = document.querySelector('body')
 const menu = document.querySelector('.menu')
 
 
-burgerButton.addEventListener("click", function(event) {
-  menu.classList.toggle("open")
-  burgerButton.classList.toggle("rotade")
-  body.classList.toggle('lock')
-  // fon.classList.toggle('work')
+if (burgerButton) {
+  burgerButton.addEventListener("click", function(event) {
+    menu.classList.toggle("open")
+    burgerButton.classList.toggle("rotade")
+    body.classList.toggle('lock')
+    // fon.classList.toggle('work')
+  })
+}
 
-})
-
-menu.addEventListener('click', burgerMenuLinkClose)
+if (menu) {
+  menu.addEventListener('click', burgerMenuLinkClose)
+}
 
 function burgerMenuLinkClose (event) {
   if (event.target.classList.contains('menu__list-link')){
