@@ -9,6 +9,11 @@ import { initLangLS } from "./js/ls-storage.js";
 
 import { initDownload } from "./js/downloadPDF.js";
 
+import { linkPreventDefault } from "./js/nav.js";
+
+import { burgerButton } from "./js/burger.js";
+import { scrollBtn } from "./js/scroll.js";
+
 // отменяю контекстное меню при длинном таче
 // body.addEventListener('contextmenu', function (event) {
 //   event.preventDefault();
@@ -33,4 +38,4 @@ window.addEventListener('load', () => {
 
 signatureScore()
 
-
+linkPreventDefault()

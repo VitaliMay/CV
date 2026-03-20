@@ -3,6 +3,7 @@ import { langState } from "./lang.js";
 
 async function downloadExistingPDF() {
   const lang = langState.isEnglish ? 'rus' : 'eng'
+  const langRSS = `${lang}_rss`
 
   spinner.classList.add('spinner_active')
 
@@ -14,7 +15,8 @@ async function downloadExistingPDF() {
     const url = URL.createObjectURL(pdfBlob);
     const link = document.createElement('a');
     link.href = url;
-    link.download = `CV_VitaliMay_${lang}.pdf`; // имя файла при скачивании
+    // link.download = `CV_VitaliMay_${lang}.pdf`; // имя файла при скачивании
+    link.download = `CV_VitaliMay_${langRSS}.pdf`; // имя файла при скачивании
     document.body.appendChild(link);
     link.click();
 
@@ -31,5 +33,7 @@ async function downloadExistingPDF() {
 }
 
 export const initDownload = () => {
-  buttonDownload.addEventListener('click', downloadExistingPDF)
+  if (buttonDownload) {
+    buttonDownload.addEventListener('click', downloadExistingPDF)
+  }
 }
