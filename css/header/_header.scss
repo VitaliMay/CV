@@ -37,7 +37,10 @@
   position: relative; /////////////////
   z-index: 40; /////////////////
 
-  color: $primary; // для цвета иконки SVG так как установил fill="currentColor"
+  // color: $primary; // для цвета иконки SVG так как установил fill="currentColor"
+  color: $sidebar-top;
+  // color: $rss-fon;
+
 
   border-radius: 4px;
   padding: 8px 20px;
@@ -67,6 +70,11 @@
   }
 
   @include cansel-color-touch;
+}
+
+.logoRSS__title {
+  // color: $sidebar-fon;
+  color: $rss-text;
 }
 
 // игры с SVG

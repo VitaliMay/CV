@@ -1,3 +1,4 @@
+// import { burgerButton } from "./burger"
 
 // const body = document.querySelector('body')
 const body = document.body
@@ -53,6 +54,12 @@ const langVarElements = {
 
 };
 
+const generalVarElements = {
+  menu: document.querySelector('.menu'),
+  burgerButton: document.querySelector('.burger-button'),
+  scrollBtn: document.querySelector('.scroll-btn'),
+}
+
 // export {body, buttonLang, localizedElements}
 // export {body, buttonLang, langNameVar}
-export {body, buttonLang, buttonDownload, spinner, langVarElements}
+export {body, buttonLang, buttonDownload, spinner, langVarElements, generalVarElements}
