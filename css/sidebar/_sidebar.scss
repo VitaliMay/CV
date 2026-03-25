@@ -550,6 +550,16 @@
 
   &_education {
     padding-left: 10px;
+
+    transition: color $tr-time ease-in-out;
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    &_education-rss:hover {
+      color: $tag-green;
+      transition: color $tr-time ease-in-out;
+    }
+
   }
 }
 
@@ -570,12 +580,23 @@
 }
 
 .link {
-  color: black;
+  // color: black;
+  color: $text-dark;
   text-decoration: none;
   // border-bottom: 0.5px solid black;
 
   // padding-bottom: 1px;
   display: block;
+
+  transition: color $tr-time ease-in-out;
+
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      color: $tag-green;
+      transition: color $tr-time ease-in-out;
+    }
+
+  }
 }
 
 .link-space {

@@ -11,8 +11,8 @@ import { initDownload } from "./js/downloadPDF.js";
 
 import { linkPreventDefault } from "./js/nav.js";
 
-import { burgerButton } from "./js/burger.js";
-import { scrollBtn } from "./js/scroll.js";
+import { initBurger } from "./js/burger.js";
+import { initScroll } from "./js/scroll.js";
 
 // отменяю контекстное меню при длинном таче
 // body.addEventListener('contextmenu', function (event) {
@@ -39,3 +39,5 @@ window.addEventListener('load', () => {
 signatureScore()
 
 linkPreventDefault()
+initBurger()
+initScroll()
