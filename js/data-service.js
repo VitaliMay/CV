@@ -1,14 +1,14 @@
 class DataService {
   constructor() {
-    this.data = null; // Сначала данных нет
+    this.data = null // Сначала данных нет
   }
 
   async initData() {
     // Если данные еще не загружены, загружаем их
     if (!this.data) {
-      await this.getData();
+      await this.getData()
     }
-    return this.data; // Возвращаем данные
+    return this.data // Возвращаем данные
   }
 
   async getData() {
@@ -20,15 +20,15 @@ class DataService {
       urlData = './content.json'
     }
 
-    const response = await fetch(`${urlData}`); // Получаем данные
+    const response = await fetch(`${urlData}`) // Получаем данные
     if (!response.ok) {
-      throw new Error('Network response was not ok');
+      throw new Error('Network response was not ok')
     }
-    this.data = await response.json(); // Сохраняю данные в свойстве `data`
+    this.data = await response.json() // Сохраняю данные в свойстве `data`
   }
 }
 
 // Singleton
-const instanceDataService = new DataService();
+const instanceDataService = new DataService()
 
 export { instanceDataService }

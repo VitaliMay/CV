@@ -1,6 +1,6 @@
-import { buttonLang, langVarElements } from "./variables.js";
-import { instanceDataService } from "./data-service.js";
-import { storeLS } from "./ls-storage.js";
+import { buttonLang, langVarElements } from './variables.js'
+import { instanceDataService } from './data-service.js'
+import { storeLS } from './ls-storage.js'
 
 const langState = {
   isEnglish: storeLS.getLang() === '/eng',
@@ -9,21 +9,21 @@ const langState = {
   langNext: 'Rus',
 
   get langCurrentMod() {
-    return this.langCurrent.toLowerCase();
+    return this.langCurrent.toLowerCase()
   },
 
   get langNextMod() {
-    return this.langNext.toLowerCase();
+    return this.langNext.toLowerCase()
   },
 
   get langDisplay() {
-    return this.isEnglish? this.langCurrentMod : this.langNextMod;
+    return this.isEnglish ? this.langCurrentMod : this.langNextMod
   },
 
   // Метод для переключения
   toggle() {
-    this.isEnglish = !this.isEnglish;
-  }
+    this.isEnglish = !this.isEnglish
+  },
 }
 
 // console.log(langState.isEnglish)
@@ -31,25 +31,24 @@ const langState = {
 
 /************************************************** */
 const updateContent = async (lang) => {
-
   try {
     const contentDataArr = await instanceDataService.initData()
-    const contentData = Array.isArray(contentDataArr) ? contentDataArr[0] : contentDataArr;
+    const contentData = Array.isArray(contentDataArr) ? contentDataArr[0] : contentDataArr
 
     for (const [key, element] of Object.entries(langVarElements)) {
       if (contentData[key] && element) {
-        element.textContent = contentData[key][lang];
+        element.textContent = contentData[key][lang]
       }
     }
   } catch (error) {
-    console.error('Error fetching data:', error);
+    console.error('Error fetching data:', error)
   }
-};
+}
 
 /************************************************* */
 
 const updateButton = (langButton) => {
-  buttonLang.textContent = langButton;
+  buttonLang.textContent = langButton
 }
 
 const changeLang = (langButton, langContent) => {
@@ -57,12 +56,11 @@ const changeLang = (langButton, langContent) => {
   langState.toggle()
 
   updateButton(langButton)
-  updateContent(langContent);
+  updateContent(langContent)
 
   // console.log('Язык изменён на:', langState.isEnglish ? langNext : langCurrent);
-};
+}
 
 /******************************** */
 
 export { langState, changeLang }
-

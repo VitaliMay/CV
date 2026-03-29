@@ -1,4 +1,3 @@
-
 /***** header ***********************************************************************/
 /***** header ***********************************************************************/
 
@@ -40,7 +39,6 @@
   // color: $primary; // для цвета иконки SVG так как установил fill="currentColor"
   color: $sidebar-top;
   // color: $rss-fon;
-
 
   border-radius: 4px;
   padding: 8px 20px;
@@ -85,7 +83,6 @@
 //   color: green; /* Изменение цвета иконки при наведении */
 // }
 
-
 .menu__list {
   display: flex;
   justify-content: space-between;
@@ -95,7 +92,7 @@
 
   column-gap: 8px;
 
-  row-gap: 8px;  //////////
+  row-gap: 8px; //////////
 
   &-link {
     display: block; /////////
@@ -133,7 +130,6 @@
         border-radius: 12px;
       }
     }
-
   }
 }
 
@@ -155,7 +151,9 @@
     transform: translateX(100%);
 
     opacity: 0;
-    transition: transform 0.6s ease, opacity 0.6s linear;
+    transition:
+      transform 0.6s ease,
+      opacity 0.6s linear;
     // transition: right 0.6s ease, opacity 0.6s linear;
     // ease, linear, ease-in, ease-out
     z-index: 16;
@@ -193,7 +191,9 @@
     transform: translateX(0%);
     opacity: 1;
     // transition: right 0.6s ease, opacity 0.6s ease-in-out;
-    transition: transform 0.6s ease, opacity 0.6s ease-in-out;
+    transition:
+      transform 0.6s ease,
+      opacity 0.6s ease-in-out;
     // ease, linear, ease-in, ease-out
   }
 }
@@ -255,7 +255,6 @@
       }
     }
   }
-
 }
 
 ////////////////////////  рисую кнопку /////////////////////////////////
@@ -265,20 +264,17 @@
   height: 1px;
   background-color: $dark;
   border-radius: 1.5px;
-  // transition: 0.4s all;
   transition: transform 0.4s ease;
 }
 
 .burger-button__cross--01 {
   position: absolute;
   transform: translateY(-4px);
-  // transition: 0.4s all;
   transition: transform 0.4s ease;
 }
 .burger-button__cross--02 {
   position: absolute;
   transform: translateY(4px);
-  // transition: 0.4s all;
   transition: transform 0.4s ease;
 }
 
@@ -287,7 +283,6 @@
 .burger-button.rotade {
   & .burger-button__cross--01 {
     transform: translateY(0px) rotate(-45deg);
-    // transition: 0.4s all;
     transition: transform 0.4s ease;
   }
   & .burger-button__cross--02 {
@@ -296,7 +291,6 @@
     transition: transform 0.4s ease;
   }
 }
-
 
 ///////////////////////////////////////////////////////////////////////////////////////
 
@@ -309,7 +303,9 @@
   z-index: 0;
   visibility: hidden;
   opacity: 0;
-  transition: visibility 0.8s, opacity 0.8s;
+  transition:
+    visibility 0.8s,
+    opacity 0.8s;
   pointer-events: none;
 
   color: $sidebar-top;
@@ -341,11 +337,11 @@
 }
 
 .scroll-btn.scroll-btn--visible {
-  z-index: 10;  // на всякий случай
+  z-index: 10; // на всякий случай
   visibility: visible;
   opacity: 1;
-  transition: visibility 0.8s, opacity 0.8s;
+  transition:
+    visibility 0.8s,
+    opacity 0.8s;
   pointer-events: all;
 }
-
-
