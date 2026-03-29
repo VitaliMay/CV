@@ -1,16 +1,15 @@
-import { Router } from "./router.js"
-import { langState, changeLang } from "./lang.js"
-import { buttonLang } from "./variables.js"
-
+import { Router } from './router.js'
+import { langState, changeLang } from './lang.js'
+import { buttonLang } from './variables.js'
 
 const routeEng = () => {
-  const { langNext: langButton,  langCurrentMod: langContent } = langState;
-  changeLang(langButton, langContent);
+  const { langNext: langButton, langCurrentMod: langContent } = langState
+  changeLang(langButton, langContent)
 }
 
 const routeRus = () => {
-  const { langCurrent: langButton,  langNextMod: langContent } = langState;
-  changeLang(langButton, langContent);
+  const { langCurrent: langButton, langNextMod: langContent } = langState
+  changeLang(langButton, langContent)
 }
 
 export const routesPath = {
@@ -23,7 +22,7 @@ export const initChangeLang = () => {
     // const { langCurrentMod, langNextMod } = langState
     // const newLang = langState.isEnglish ? langCurrentMod : langNextMod;
     const newLang = langState.langDisplay
-    Router.navigate(`/${newLang}`);
+    Router.navigate(`/${newLang}`)
     // console.log(`click на Ланг ${newLang}`)
     // console.log(`click на isEnglish ${langState.isEnglish}`)
   })
@@ -33,5 +32,5 @@ export const initChangeLang = () => {
 
 // Создаем и экспортируем роутер
 export const createRouter = () => {
-  return new Router(routesPath);
-};
+  return new Router(routesPath)
+}

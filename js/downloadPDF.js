@@ -1,5 +1,5 @@
-import { buttonDownload, spinner } from "./variables.js";
-import { langState } from "./lang.js";
+import { buttonDownload, spinner } from './variables.js'
+import { langState } from './lang.js'
 
 async function downloadExistingPDF() {
   const lang = langState.isEnglish ? 'rus' : 'eng'
@@ -8,25 +8,23 @@ async function downloadExistingPDF() {
   spinner.classList.add('spinner_active')
 
   try {
-    const response = await fetch(`./assets/download/CV_VitaliMay_${lang}.pdf`);
-    const pdfBlob = await response.blob(); // получаем Blob из ответа
+    const response = await fetch(`./assets/download/CV_VitaliMay_${lang}.pdf`)
+    const pdfBlob = await response.blob() // получаем Blob из ответа
 
     // Создаем ссылку для скачивания
-    const url = URL.createObjectURL(pdfBlob);
-    const link = document.createElement('a');
-    link.href = url;
+    const url = URL.createObjectURL(pdfBlob)
+    const link = document.createElement('a')
+    link.href = url
     // link.download = `CV_VitaliMay_${lang}.pdf`; // имя файла при скачивании
-    link.download = `CV_VitaliMay_${langRSS}.pdf`; // имя файла при скачивании
-    document.body.appendChild(link);
-    link.click();
+    link.download = `CV_VitaliMay_${langRSS}.pdf` // имя файла при скачивании
+    document.body.appendChild(link)
+    link.click()
 
     // Очищаем
-    document.body.removeChild(link);
-    URL.revokeObjectURL(url);
-
+    document.body.removeChild(link)
+    URL.revokeObjectURL(url)
   } catch (error) {
-    console.error(error);
-
+    console.error(error)
   } finally {
     spinner.classList.remove('spinner_active')
   }

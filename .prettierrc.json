@@ -1,0 +1,12 @@
+{
+  "plugins": ["@awmottaz/prettier-plugin-void-html"],
+  "printWidth": 120,
+  "htmlWhitespaceSensitivity": "ignore",
+  "bracketSameLine": true,
+  "singleAttributePerLine": false,
+  "tabWidth": 2,
+  "useTabs": false,
+  "singleQuote": true,
+  "trailingComma": "es5",
+  "semi": false
+}

@@ -1,43 +1,39 @@
-
-
 /***** variables ***********************************************************************/
 /***** variables ***********************************************************************/
 
+// $background-body: tomato;
+// $background-primary: linear-gradient(rgb(0, 0, 0), rgba(255, 255, 255, 0.7));
+// $color-shadow: rgba(0, 0, 0, 0.25);
+// $color-light: rgb(255, 255, 255);
+// $color-dark: rgb(0, 0, 0);
 
-  // $background-body: tomato;
-  // $background-primary: linear-gradient(rgb(0, 0, 0), rgba(255, 255, 255, 0.7));
-  // $color-shadow: rgba(0, 0, 0, 0.25);
-  // $color-light: rgb(255, 255, 255);
-  // $color-dark: rgb(0, 0, 0);
+// $primary: #395a86;
+// $primary: #f5f7f9;
+$primary: rgb(255, 70, 70);
+$primary-10: rgba(255, 70, 70, 0.1);
+$dark: #181c29;
+$static-white: rgb(255, 255, 255);
+$static-white-20: rgba(255, 255, 255, 0.2);
+$static-white-40: rgba(255, 255, 255, 0.4);
+$static-white-60: rgba(255, 255, 255, 0.6);
+$content-background: rgb(236, 243, 248);
+$tag-purple: rgb(67, 97, 255);
+$tag-pink: rgb(255, 67, 247);
+$tag-green: rgb(6, 164, 79);
 
+$sidebar-top: rgb(57, 90, 134);
+$sidebar-fon: rgb(245, 247, 249);
+$sidebar-top-light: rgba(57, 90, 134, 0.2);
 
-	// $primary: #395a86;
-	// $primary: #f5f7f9;
-	$primary: rgb(255, 70, 70);
-	$primary-10: rgba(255, 70, 70, 0.1);
-	$dark: #181c29;
-	$static-white: rgb(255, 255, 255);
-	$static-white-20: rgba(255, 255, 255, 0.2);
-	$static-white-40: rgba(255, 255, 255, 0.4);
-	$static-white-60: rgba(255, 255, 255, 0.6);
-	$content-background: rgb(236, 243, 248);
-	$tag-purple: rgb(67, 97, 255);
-	$tag-pink: rgb(255, 67, 247);
-	$tag-green: rgb(6, 164, 79);
+$avatar-size: clamp(80px, 26vw, 130px);
+$avatar-radius-height: 40px;
 
-	$sidebar-top: rgb(57, 90, 134);
-	$sidebar-fon: rgb(245, 247, 249);
-	$sidebar-top-light: rgba(57, 90, 134, 0.2);
+$add-color-dark: rgb(200, 200, 200);
+$add-color-light: rgb(196, 197, 199);
 
-	$avatar-size: clamp(80px, 26vw, 130px);
-	$avatar-radius-height: 40px;
+$mobile-break-point: 640px;
 
-	$add-color-dark: rgb(200, 200, 200);
-	$add-color-light: rgb(196, 197, 199);
+$tr-time: 0.2s;
 
-	$mobile-break-point: 640px;
-
-	$tr-time: 0.2s;
-
-	$text-dark: rgb(0, 0, 0);
-	$rss-text: rgb(255, 183, 73);
+$text-dark: rgb(0, 0, 0);
+$rss-text: rgb(255, 183, 73);

@@ -1,6 +1,3 @@
-// import { burgerButton } from "./burger"
-
-// const body = document.querySelector('body')
 const body = document.body
 
 /******************************* */
@@ -13,22 +10,6 @@ const spinner = document.querySelector('.spinner')
 
 const name = sidebarContainer.querySelector('.name__title_name')
 
-// const contactTitle = sidebarContainer.querySelector('.contact-title')
-// const contactName = sidebarContainer.querySelector('.contact-item_name')
-// const contactCity = sidebarContainer.querySelector('.contact-item_city')
-// const contactCountry = sidebarContainer.querySelector('.contact-item_country')
-
-// const langNameVar = {
-//   name,
-//   contactTitle,
-//   contactName,
-//   contactCity,
-//   contactCountry
-// }
-
-
-// const localizedElements = {
-// const langNameVar = {
 const langVarElements = {
   name: sidebarContainer.querySelector('.name__title_name'),
   contactTitle: sidebarContainer.querySelector('.section-title_contact'),
@@ -51,8 +32,7 @@ const langVarElements = {
   eduUniver: sidebarContainer.querySelector('.title_education-univer'),
   eduUniverPro: sidebarContainer.querySelector('.subtitle_education-univer'),
   eduRSSPro: sidebarContainer.querySelector('.subtitle_education-rss'),
-
-};
+}
 
 const generalVarElements = {
   menu: document.querySelector('.menu'),
@@ -60,6 +40,4 @@ const generalVarElements = {
   scrollBtn: document.querySelector('.scroll-btn'),
 }
 
-// export {body, buttonLang, localizedElements}
-// export {body, buttonLang, langNameVar}
-export {body, buttonLang, buttonDownload, spinner, langVarElements, generalVarElements}
+export { body, buttonLang, buttonDownload, spinner, langVarElements, generalVarElements }

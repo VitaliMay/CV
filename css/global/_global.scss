@@ -1,12 +1,10 @@
-
-
 /******** global *****************************************************/
 /******** global *****************************************************/
 /* сбрасываю, то что может мешать */
 
 *,
 *::after,
-*::before{
+*::before {
   box-sizing: inherit;
 }
 
@@ -16,9 +14,16 @@ ol[class] {
 }
 
 body,
-h1,h2,h3,h4,h5,h6,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
 p,
-ul,ol,li,
+ul,
+ol,
+li,
 figure,
 figcaption,
 blockquote,
@@ -36,7 +41,7 @@ ul[class] {
 }
 
 li {
-    list-style-type: none;
+  list-style-type: none;
 }
 
 input,
@@ -46,7 +51,7 @@ select {
   font: inherit;
 }
 
-a{
+a {
   text-decoration: none;
   /*чтобы наследовали цвет родителя*/
   color: inherit;
@@ -70,9 +75,10 @@ button {
 
 @font-face {
   font-family: 'Montserrat';
-  src: url("../assets/fonts/montserrat/Montserrat-Regular.woff2") format('woff2'),
-       url("../assets/fonts/montserrat/Montserrat-Regular.woff") format('woff'),
-       url("../assets/fonts/montserrat/Montserrat-Regular.ttf") format('truetype');
+  src:
+    url('../assets/fonts/montserrat/Montserrat-Regular.woff2') format('woff2'),
+    url('../assets/fonts/montserrat/Montserrat-Regular.woff') format('woff'),
+    url('../assets/fonts/montserrat/Montserrat-Regular.ttf') format('truetype');
   font-style: normal;
   font-weight: 400;
   font-display: swap;
@@ -80,19 +86,20 @@ button {
 
 @font-face {
   font-family: 'Montserrat';
-  src: url("../assets/fonts/montserrat/Montserrat-SemiBold.woff2") format('woff2'),
-       url("../assets/fonts/montserrat/Montserrat-SemiBold.woff") format('woff'),
-       url("../assets/fonts/montserrat/Montserrat-SemiBold.ttf") format('truetype');
+  src:
+    url('../assets/fonts/montserrat/Montserrat-SemiBold.woff2') format('woff2'),
+    url('../assets/fonts/montserrat/Montserrat-SemiBold.woff') format('woff'),
+    url('../assets/fonts/montserrat/Montserrat-SemiBold.ttf') format('truetype');
   font-style: normal;
   font-weight: 600;
   font-display: swap;
 }
 
-
 @font-face {
   font-family: 'Arial';
-  src: url("../assets/fonts/arial/arial_tt.woff") format('woff'),
-       url("../assets/fonts/arial/arial_tt.ttf") format('truetype');
+  src:
+    url('../assets/fonts/arial/arial_tt.woff') format('woff'),
+    url('../assets/fonts/arial/arial_tt.ttf') format('truetype');
   // src: url("../assets/fonts/Allura-Regular.ttf");
   font-style: normal;
   font-weight: 400;
@@ -101,9 +108,10 @@ button {
 
 @font-face {
   font-family: 'Allura';
-  src: url("../assets/fonts/allura/Allura-Regular.woff2") format('woff2'),
-       url("../assets/fonts/allura/Allura-Regular.woff") format('woff'),
-       url("../assets/fonts/allura/Allura-Regular.ttf") format('truetype');
+  src:
+    url('../assets/fonts/allura/Allura-Regular.woff2') format('woff2'),
+    url('../assets/fonts/allura/Allura-Regular.woff') format('woff'),
+    url('../assets/fonts/allura/Allura-Regular.ttf') format('truetype');
   font-style: normal;
   font-weight: 400;
   font-display: swap;
@@ -124,29 +132,28 @@ html {
   font-size: 10px; // для rem
 }
 
-
 /* чтобы прижать футер к низу страницы*/
 /*! чтобы всегда была полоса прокрутки и не дергалось при пиксель перфект. 
 Надо убрать для мобилок*/
 
 html {
-	height: 100.1%;
+  height: 100.1%;
   scrollbar-gutter: stable; // чтобы не дёргалось при открытии модалок
 }
 
 body {
   // min-width: 100vw;
   // width: 100vw;
-	height: 100%;
+  height: 100%;
   background-color: white; // если вдруг пользователь поменял дефолтные настройки
 }
 
 /* чтобы прижать футер к низу страницы*/
 
 .wrapper {
-	display: flex;
-	flex-direction: column;
-	min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 
   width: 100%;
   // max-width: 1440px;
@@ -155,19 +162,17 @@ body {
   background: $sidebar-top-light;
 }
 
-
 /* чтобы прижать футер к низу страницы*/
 .main {
-	// flex: 1 0 auto;
+  // flex: 1 0 auto;
   flex-grow: 1;
 
   // background-color: $primary;
   // border-radius: 20px;
 }
 .footer {
-	flex: 0 0 auto;
+  flex: 0 0 auto;
 }
-
 
 /* убираю скролл */
 body.lock {
@@ -177,6 +182,3 @@ body.lock {
   //   margin-right: 17px; // чтобы не дёргалось при открытии модалки
   // }
 }
-
-
-
