@@ -19,7 +19,7 @@ const CONFIG = {
 }
 
 const initBurger = () => {
-  // if (!menu || !burgerButton) return;
+  if (!menu || !burgerButton) return;
 
   if (burgerButton) {
     burgerButton.addEventListener('click', function (event) {

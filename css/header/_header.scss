@@ -30,6 +30,8 @@
   justify-content: space-between;
   align-items: center;
   column-gap: 8px;
+
+  color: $sidebar-top;
 }
 
 .logo {
@@ -37,7 +39,7 @@
   z-index: 40; /////////////////
 
   // color: $primary; // для цвета иконки SVG так как установил fill="currentColor"
-  color: $sidebar-top;
+  // color: $sidebar-top;
   // color: $rss-fon;
 
   border-radius: 4px;
@@ -60,7 +62,7 @@
 
   &__text {
     @include action-small;
-    color: $dark;
+    // color: $dark;
   }
 
   &:hover {
@@ -104,7 +106,7 @@
       @include action-large;
     }
 
-    color: $dark;
+    // color: $dark;
     border-radius: 4px;
     padding: 12px 20px;
 
@@ -124,8 +126,10 @@
 
     @media (hover: hover) and (pointer: fine) {
       &:hover {
-        color: $primary;
-        background: $primary-10;
+        color: $sidebar-top-60;
+        // color: $primary;
+        background: $sidebar-top-10;
+        // background: $primary-10;
         transition: all 0.6s;
         border-radius: 12px;
       }
