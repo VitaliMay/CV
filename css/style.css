@@ -481,12 +481,12 @@ body.lock {
   align-items: center;
   -moz-column-gap: 8px;
        column-gap: 8px;
+  color: rgb(57, 90, 134);
 }
 
 .logo {
   position: relative;
   z-index: 40;
-  color: rgb(57, 90, 134);
   border-radius: 4px;
   padding: 8px 20px;
   height: 40px;
@@ -504,7 +504,6 @@ body.lock {
   line-height: 130%;
   letter-spacing: 0.05em;
   text-transform: uppercase;
-  color: #181c29;
 }
 .logo:hover {
   border-radius: 12px;
@@ -547,7 +546,6 @@ body.lock {
   }
 }
 .menu__list-link {
-  color: #181c29;
   border-radius: 4px;
   padding: 12px 20px;
   transition: all 0.6s;
@@ -561,8 +559,8 @@ body.lock {
 }
 @media (hover: hover) and (pointer: fine) {
   .menu__list-link:hover {
-    color: rgb(255, 70, 70);
-    background: rgba(255, 70, 70, 0.1);
+    color: rgba(57, 90, 134, 0.6);
+    background: rgba(57, 90, 134, 0.1);
     transition: all 0.6s;
     border-radius: 12px;
   }
